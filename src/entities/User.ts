@@ -32,13 +32,7 @@ export class User extends BaseEntity {
         nullable: true
     })
     token: string;
-    // @Column({
-    //     type: 'text',
-    //     default: () => "'[]'",
-    //     nullable: true,
-    //     array: true
-    // })
-    // blocklist: string[];
+
     @Column({
         type: 'jsonb',
         array: false,

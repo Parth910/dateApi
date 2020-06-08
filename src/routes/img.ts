@@ -1,12 +1,12 @@
 import Router from 'router';
 import { User } from '../entities/User';
 import { getConnection, getRepository } from 'typeorm';
-import {verifyToken} from '../auth/verifyUser';
-import {upload} from '../function/multer';
+import { verifyToken } from '../auth/verifyUser';
+import { upload } from '../function/multer';
 export const imgRouter = Router();
 
- imgRouter.route("/").post(verifyToken, upload.single('userimage'), async (req, res) => {
-    //console.log((req as any).file);
+imgRouter.route("/").post(verifyToken, upload.single('userimage'), async (req, res) => {
+
     const imgId = (req as any).file.path.substring(
         (req as any).file.path.lastIndexOf(":") + 1,
         (req as any).file.path.lastIndexOf(";")

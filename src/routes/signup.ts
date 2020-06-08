@@ -4,11 +4,9 @@ import bcrypt from 'bcrypt';
 
 export const signUpRouter = router();
 signUpRouter.route('/').post((req, res) => {
-console.log("ok");
+   
 
-    // if(validateUser(req.body)){res.json({
-    //     message:'done'
-    // })}
+
     User.findOne({ email: req.body.email })
 
         .then(user => {

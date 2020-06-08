@@ -41,29 +41,29 @@ app.use('/login', logInRouter);
 
 app.get('/u1', (req, res) => {
     res.sendFile(path.resolve("./index.html"));
-    // res.send("OK");
+   
 })
 app.get('/u2', (req, res) => {
     res.sendFile(path.resolve("./u2.html"));
-    // res.send("OK");
+   
 })
 
-app.get('/',async (req, res) => {
+app.get('/', async (req, res) => {
     await getConnection()
         .createQueryBuilder()
         .insert()
         .into(User)
         .values([
-            { email:"1@t.c",password:"123",imgPath: "uploads/1.jpeg", imgId: "1" },
-            { email:"22@t.c",password:"123",imgPath: "uploads/2.jpeg", imgId: "2" },
-            { email:"3@t.c",password:"123",imgPath: "uploads/3.jpeg", imgId: "3" },
-            { email:"4@t.c",password:"123",imgPath: "uploads/4.jpeg", imgId: "4" },
-            { email:"15@t.c",password:"123",imgPath: "uploads/5.jpeg", imgId: "5" },
-            { email:"16@t.c",password:"123",imgPath: "uploads/6.jpeg", imgId: "6" },
-            { email:"17@t.c",password:"123",imgPath: "uploads/7.jpeg", imgId: "7" },
-            { email:"18@t.c",password:"123",imgPath: "uploads/8.jpeg", imgId: "8" },
-            { email:"19@t.c",password:"123",imgPath: "uploads/9.jpeg", imgId: "9" },
-            { email:"100@t.c",password:"123",imgPath: "uploads/10.jpeg", imgId: "10" },
+            { email: "1@t.c", password: "123", imgPath: "uploads/1.jpeg", imgId: "1" },
+            { email: "22@t.c", password: "123", imgPath: "uploads/2.jpeg", imgId: "2" },
+            { email: "3@t.c", password: "123", imgPath: "uploads/3.jpeg", imgId: "3" },
+            { email: "4@t.c", password: "123", imgPath: "uploads/4.jpeg", imgId: "4" },
+            { email: "15@t.c", password: "123", imgPath: "uploads/5.jpeg", imgId: "5" },
+            { email: "16@t.c", password: "123", imgPath: "uploads/6.jpeg", imgId: "6" },
+            { email: "17@t.c", password: "123", imgPath: "uploads/7.jpeg", imgId: "7" },
+            { email: "18@t.c", password: "123", imgPath: "uploads/8.jpeg", imgId: "8" },
+            { email: "19@t.c", password: "123", imgPath: "uploads/9.jpeg", imgId: "9" },
+            { email: "100@t.c", password: "123", imgPath: "uploads/10.jpeg", imgId: "10" },
 
         ])
         .execute();
@@ -72,11 +72,10 @@ app.get('/',async (req, res) => {
 
 io.on('connection', (socket) => {
     socket.on('join', (token, callback) => {
-        //    console.log("Token-->"+token);
+
 
         const userOp = addUser({ socketid: socket.id, token: token });
-        //if (error) return callback(error);
-        // console.log("addUser");
+
         console.log(userOp);
 
 
