@@ -46,7 +46,7 @@ For Load Sample Dataset visit at http://localhost:3000
 
 ```
 ### Folder Structure
-![Image](https://github.com/Parth910/innovaccer_src/blob/master/Screenshot%20from%202019-11-28%2000-22-26.png)
+![Image](https://github.com/Parth910/dateApi/blob/master/Screenshot%20from%202020-06-09%2000-58-20.png
 
 
 ## How it Works!!!
