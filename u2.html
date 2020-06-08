@@ -1,0 +1,33 @@
+<!-- ./client/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onClick="sendMsg()">Hit Me</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script>
+      const socket = io("http://localhost:3000");
+      const tok="ae295014-1de1-4a4e-9844-25c3b48dec98";
+      socket.emit('join',tok,()=>{
+           
+          });
+      function sendMsg() {
+        socket.emit("message", "HELLO WORLD");
+      }
+      var tSocket = io(window.location.origin,{
+        query:'token=1591611484255'
+      });
+      tSocket.on('notification',(notificationMsg)=>{
+        console.log(notificationMsg);
+        alert(notificationMsg);
+        
+      });
+    </script>
+  </body>
+</html>
